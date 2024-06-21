@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de création de compte utilisateur</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+        }
+
+        .form-control {
+            height: calc(1.5em + 0.75rem + 2px);
+            font-size: 0.875rem;
+            color: #495057;
+            background-color: #e9ecef;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #d2e3ee;
+            border-color: #86b7f2;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #138496;
+            border-color: #117a8b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Création de compte utilisateur</h1>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="nom">Nom de famille :</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" class="form-control" id="prenom" name="prenom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dateNaissance">Date de naissance :</label>
+                <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lieuNaissance">Lieu de naissance :</label>
+                <input type="text" class="form-control" id="lieuNaissance" name="lieuNaissance" required>
+            </div>
+
+            <div class="form-group">
+                <label for="deptNaissance">Département de naissance :</label>
+                <input type="text" class="form-control" id="deptNaissance" name="departementNaissance" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="numeroRue">Numéro de rue :</label>
+                    <input type="text" class="form-control" id="numeroRue" name="numeroRue" required>
+                </div>
+
+                <div class="form-group col-md-8">
+                    <label for="libelleRue">Libellé de la rue :</label>
+                    <input type="text" class="form-control" id="libelleRue" name="libelleRue" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="codePostal">Code postal :</label>
+                    <input type="text" class="form-control" id="codePostal" name="codePostal" required>
+                </div>
+
+                <div class="form-group col-md-8">
+                    <label for="ville">Ville :</label>
+                    <input type="text" class="form-control" id="ville" name="ville" required>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="validateForm()">Valider</button>
+            <button type="reset" class="btn btn-secondary">Effacer</button>
+        </form>
+
+        <div id="errorMessage" class="error-message d-none"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
