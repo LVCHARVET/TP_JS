@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition</title>
+    <style>
+        #messageErreur {
+            color: white;
+            background-color: red;
+            display: none;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculatrice</h1>
+    <label for="nombre1">Nombre 1:</label>
+    <input type="text" id="nombre1"><br><br>
+    <label for="nombre2">Nombre 2:</label>
+    <input type="text" id="nombre2"><br><br>
+    <button onclick="calculer()">Calculer</button>
+    <p id="messageErreur">Vous devez saisir un nombre</p>
+    <p>Le résultat de l'addition est : <span id="resultat"></span></p>
+
+    <script>
+        function calculer() {
+            const nombre1 = document.querySelector('#nombre1').value;
+            const nombre2 = document.querySelector('#nombre2').value;
+
+            const num1 = parseFloat(nombre1);
+            const num2 = parseFloat(nombre2);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.querySelector('#messageErreur').style.display = 'block';
+                document.querySelector('#resultat').textContent = '';
+            } else {
+                document.querySelector('#messageErreur').style.display = 'none';
+                const resultat = num1 + num2;
+                document.querySelector('#resultat').textContent = resultat;
+            }
+        }
+    </script>
+</body>
+</html>
